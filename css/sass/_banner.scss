@@ -5,6 +5,7 @@
 	background-position: center;
 	-ms-behavior: url(../backgroundsize.min.htc);
 	text-align: center;
+	position: relative;
 
 	.container {
 		padding-top: 245px;
@@ -26,6 +27,17 @@
 		@extend %text;
 		@include define-fonte('open_sansregular', 30px);
 		margin: 5px 0;
+	}
+	
+	.arrow-down {
+		background: url(../img/arrow-down.png) no-repeat;
+		height: 80px;
+		width: 80px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: 305px 0 0 -40px;
+
 	}
 
 }

@@ -712,20 +712,17 @@ ul {
 
 header {
   position: relative; }
-  header .logo {
-    height: 145px;
-    display: block; }
   header .logo_img {
-    position: absolute;
     background: url(../img/logo-img.png) no-repeat;
+    float: left;
     height: 153px;
     width: 117px; }
   header p {
     font-family: "open_sanssemibold", "sans-serif";
     font-size: 38px;
     color: #e1a013;
-    margin-left: 135px;
-    padding-top: 55px; }
+    margin-top: 55px;
+    margin-left: 135px; }
   header .menu {
     position: absolute;
     right: 0;
@@ -746,7 +743,8 @@ header {
   background-size: cover;
   background-position: center;
   -ms-behavior: url(../backgroundsize.min.htc);
-  text-align: center; }
+  text-align: center;
+  position: relative; }
   .banner .container {
     padding-top: 245px; }
   .banner h1, .banner p {
@@ -763,5 +761,13 @@ header {
     font-size: 30px;
     color: #FFF;
     margin: 5px 0; }
+  .banner .arrow-down {
+    background: url(../img/arrow-down.png) no-repeat;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 305px 0 0 -40px; }
 
 /*# sourceMappingURL=main.css.map */
