@@ -1,0 +1,22 @@
+diff a/css/main.css b/css/main.css	(rejected hunks)
+@@ -751,15 +751,17 @@
+     padding-top: 245px; }
+   .banner h1, .banner p {
+     background: url(../img/banner-txt_bg.png) repeat;
+-    display: inline-block; }
++    display: inline-block;
++    padding: 0px 25px; }
+   .banner h1 {
+     font-family: "open_sansbold", "sans-serif";
+     font-size: 35px;
+     color: #FFF;
+-    background: url(../img/banner-txt_bg.png) repeat; }
++    margin-bottom: 30px; }
+   .banner p {
+     font-family: "open_sansregular", "sans-serif";
+     font-size: 30px;
+-    color: #FFF; }
++    color: #FFF;
++    margin: 5px 0; }
+ 
+ /*# sourceMappingURL=main.css.map */

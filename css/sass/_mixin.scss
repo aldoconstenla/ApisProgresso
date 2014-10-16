@@ -1,0 +1,5 @@
+@mixin define-fonte($fonte, $tamanho, $cor) {
+	font-family: $fonte, 'sans-serif';
+	font-size: $tamanho;
+	color: $cor;
+}

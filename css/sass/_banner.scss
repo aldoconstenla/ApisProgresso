@@ -1,0 +1,31 @@
+.banner {
+	height: 690px;
+	background: url(../img/banner_bg.jpg);
+	background-size: cover;
+	background-position: center;
+	-ms-behavior: url(../backgroundsize.min.htc);
+	text-align: center;
+
+	.container {
+		padding-top: 245px;
+	}
+
+	%text {
+		background: url(../img/banner-txt_bg.png) repeat;
+		display: inline-block;
+		padding: 0px 25px;
+	}
+
+	h1 {
+		@extend %text;
+		@include define-fonte('open_sansbold', 35px);
+		margin-bottom: 30px;
+	}
+
+	p {
+		@extend %text;
+		@include define-fonte('open_sansregular', 30px);
+		margin: 5px 0;
+	}
+
+}
