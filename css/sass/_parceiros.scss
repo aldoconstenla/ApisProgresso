@@ -1,0 +1,36 @@
+.parceiros {
+
+	position: relative;
+	
+	.container {
+		margin: 170px auto;
+		width: 1010px;
+	}
+
+	.partner {
+		display: inline-block;
+		text-indent: -9999px;
+		background: url(http://placehold.it/243x243/);
+		width: 243px;
+		height: 243px;
+		margin: 43px 3px 0 3px;
+	}
+
+	.arrow {
+		
+		width: 24px;
+		height: 46px;
+		position: absolute;
+		top: 180px;
+
+		&.right {
+			background: url(../img/arrow-right.png) no-repeat;
+			right: 5px;
+		}
+		&.left {
+			background: url(../img/arrow-left.png) no-repeat;
+			left: 5px;
+		}
+	}
+
+}

@@ -710,6 +710,11 @@ ul {
   width: 1200px;
   margin: 0 auto; }
 
+h2 {
+  font-family: "open_sansregular", "sans-serif";
+  font-size: 30px;
+  color: #e1a013; }
+
 header {
   position: relative; }
   header .logo_img {
@@ -769,5 +774,75 @@ header {
     top: 50%;
     left: 50%;
     margin: 305px 0 0 -40px; }
+
+.empresa .container {
+  margin: 170px auto;
+  width: 855px; }
+.empresa .empresa_img {
+  background: url(../img/empresa_img.png) no-repeat;
+  float: left;
+  width: 217px;
+  height: 251px;
+  margin-top: 25px; }
+.empresa p, .empresa h2 {
+  margin-left: 270px; }
+.empresa p {
+  font-family: "open_sansregular", "sans-serif";
+  font-size: 18px;
+  color: #000; }
+.empresa h2 {
+  margin-bottom: 25px; }
+
+.produtos {
+  background-color: #e1a013; }
+  .produtos .container {
+    padding: 80px 0;
+    width: 1054px; }
+  .produtos h2 {
+    color: #FFF; }
+  .produtos .product {
+    width: 255px;
+    height: 255px;
+    background-color: #c08910;
+    display: inline-block;
+    position: relative; }
+  .produtos a {
+    font-family: "open_sansregular", "sans-serif";
+    font-size: 14px;
+    color: #FFF;
+    text-align: center;
+    margin: 5px 5px 5px 0px; }
+  .produtos h2 {
+    margin: 0 0 35px 20px; }
+  .produtos img {
+    position: absolute;
+    left: 40px;
+    top: 16px; }
+  .produtos p {
+    margin-top: 210px; }
+
+.parceiros {
+  position: relative; }
+  .parceiros .container {
+    margin: 170px auto;
+    width: 1010px; }
+  .parceiros .partner {
+    display: inline-block;
+    text-indent: -9999px;
+    background: url(http://placehold.it/243x243/);
+    width: 243px;
+    height: 243px;
+    margin: 43px 3px 0 3px; }
+  .parceiros .arrow {
+    width: 24px;
+    height: 46px;
+    position: absolute;
+    top: 180px; }
+    .parceiros .arrow.right {
+      background: url(../img/arrow-right.png) no-repeat;
+      right: 5px; }
+    .parceiros .arrow.left {
+      background: url(../img/arrow-left.png) no-repeat;
+      left: 5px; }
 
 /*# sourceMappingURL=main.css.map */
