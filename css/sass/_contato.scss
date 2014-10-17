@@ -1,0 +1,53 @@
+.contato {
+
+	background-color: $main-color;
+
+	.container {
+		width: 1005px;
+		padding: 50px 0 80px 0;
+	}
+
+	h2 {
+		color: #FFF;
+		margin-bottom: 20px;
+	}
+
+	p {
+		@include define-fonte('open_sansregular', 18px);
+	}
+
+	.mail-us {
+		float: left;
+	}
+
+	.contact-us {
+		float: right;
+		margin-right: 80px;
+	}
+
+	form {
+
+		position: relative;
+
+		.field {
+			border-radius: 10px;
+			display: block;
+			margin: 10px 0;
+			width: 350px;
+			height: 40px;
+		}
+
+		#mensagem {
+			width: 420px;
+			height: 80px;
+		}
+
+		.send_btn {
+			position: absolute;
+			bottom: -45px;
+			right: 0;
+		}
+
+	}
+
+}
