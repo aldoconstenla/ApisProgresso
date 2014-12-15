@@ -85,7 +85,7 @@ body {
  * Address `outline` inconsistency between Chrome and other browsers.
  */
 a:focus {
-  outline: thin dotted; }
+  outline: 0; }
 
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
@@ -697,7 +697,8 @@ textarea {
   font-weight: normal;
   font-style: normal; }
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  outline: 0; }
 
 h1, h2, p, ul {
   padding: 0;
@@ -715,32 +716,61 @@ h2 {
   font-size: 30px;
   color: #e1a013; }
 
-header {
+header, .minimenu > .container {
   position: relative; }
-  header .logo_img {
+  header .logo_img, .minimenu > .container .logo_img {
     background: url(../img/logo-img.png) no-repeat;
     float: left;
     height: 153px;
     width: 117px; }
-  header p {
+  header p, .minimenu > .container p {
     font-family: "open_sanssemibold", "sans-serif";
     font-size: 38px;
     color: #e1a013;
     margin-top: 55px;
     margin-left: 135px; }
-  header .menu {
+  header .menu, .minimenu > .container .menu {
+    z-index: 100;
     position: absolute;
     right: 0;
     top: 70px; }
-    header .menu li {
+    header .menu li, .minimenu > .container .menu li {
       display: inline-block;
       margin-left: 30px; }
-    header .menu a {
+    header .menu a, .minimenu > .container .menu a {
       font-family: "open_sanssemibold", "sans-serif";
       font-size: 20px;
-      color: #000; }
-      header .menu a:hover {
-        color: #835d0b; }
+      color: #000;
+      transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      padding-bottom: 8px; }
+      header .menu a:hover, .minimenu > .container .menu a:hover {
+        color: #b27f0f;
+        border-bottom: 2px solid #b27f0f; }
+
+.minimenu {
+  opacity: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #FFF;
+  border-bottom: 1px solid #e1a013;
+  z-index: 1; }
+  .minimenu .container .logo_img {
+    background: url(../img/logomini-img.png) no-repeat;
+    height: 106px;
+    width: 106px; }
+  .minimenu .container .menu {
+    top: 40px; }
+  .minimenu .container p {
+    margin-top: 28px;
+    padding-bottom: 25px; }
+
+.minimenu.active {
+  opacity: 1;
+  z-index: 9999;
+  transition: opacity 0.5s; }
 
 .banner {
   height: 690px;
@@ -751,7 +781,7 @@ header {
   text-align: center;
   position: relative; }
   .banner .container {
-    padding-top: 245px; }
+    padding-top: 205px; }
   .banner h1, .banner p {
     background: url(../img/banner-txt_bg.png) repeat;
     display: inline-block;
@@ -771,13 +801,24 @@ header {
     height: 80px;
     width: 80px;
     position: absolute;
-    top: 50%;
     left: 50%;
-    margin: 305px 0 0 -40px; }
+    bottom: 0;
+    margin: 0 0 90px -40px;
+    -webkit-animation: bounce 1s infinite; }
 
+@-webkit-keyframes bounce {
+  0% {
+    bottom: 5px; }
+  25%, 75% {
+    bottom: 15px; }
+  50% {
+    bottom: 20px; }
+  100% {
+    bottom: 0; } }
 .empresa .container {
-  margin: 170px auto;
-  width: 855px; }
+  margin: 0 auto 170px auto;
+  padding-top: 170px;
+  width: 960px; }
 .empresa .empresa_img {
   background: url(../img/empresa_img.png) no-repeat;
   float: left;
@@ -785,68 +826,110 @@ header {
   height: 251px;
   margin-top: 25px; }
 .empresa p, .empresa h2 {
-  margin-left: 270px; }
+  margin-left: 305px; }
 .empresa p {
   font-family: "open_sansregular", "sans-serif";
-  font-size: 18px;
-  color: #000; }
+  font-size: 20px;
+  color: #000;
+  line-height: 3; }
 .empresa h2 {
   margin-bottom: 25px; }
 
 .produtos {
+  position: relative;
   background-color: #e1a013; }
+  .produtos .prod-top, .produtos .prod-bottom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -600px; }
+  .produtos .prod-top {
+    margin-top: -447px; }
+  .produtos .prod-bottom {
+    margin-top: 430px; }
   .produtos .container {
-    padding: 80px 0;
-    width: 1054px; }
+    padding: 130px 0 100px 0;
+    width: 1054px;
+    height: 660px; }
   .produtos h2 {
     color: #FFF; }
   .produtos .product {
     width: 255px;
     height: 255px;
-    background-color: #c08910;
-    display: inline-block;
-    position: relative; }
+    display: block;
+    position: absolute;
+    top: 225px; }
+    .produtos .product.mel {
+      left: 105px; }
+    .produtos .product.propolis {
+      left: 370px; }
+    .produtos .product.granola {
+      left: 635px; }
+    .produtos .product.xarope {
+      left: 900px; }
+    .produtos .product.geleia {
+      left: 105px;
+      top: 490px; }
+    .produtos .product.outros {
+      left: 370px;
+      top: 490px; }
   .produtos a {
+    background-color: #c08910;
     font-family: "open_sansregular", "sans-serif";
-    font-size: 14px;
+    font-size: 16px;
     color: #FFF;
     text-align: center;
-    margin: 5px 5px 5px 0px; }
+    margin: 5px 5px 5px 0px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all; }
+    .produtos a:hover {
+      background-color: #FFF;
+      color: #000; }
   .produtos h2 {
     margin: 0 0 35px 20px; }
-  .produtos img {
+  .produtos .product > img {
     position: absolute;
     left: 40px;
     top: 16px; }
   .produtos p {
     margin-top: 210px; }
 
-.parceiros {
+.parceiros .container {
+  margin: 0 auto 170px auto;
+  padding-top: 170px;
+  width: 1010px;
   position: relative; }
-  .parceiros .container {
-    margin: 170px auto;
-    width: 1010px; }
-  .parceiros .partner {
-    display: inline-block;
-    text-indent: -9999px;
-    background: url(http://placehold.it/243x243/);
-    width: 243px;
-    height: 243px;
-    margin: 43px 3px 0 3px; }
-  .parceiros .arrow {
-    width: 24px;
-    height: 46px;
-    position: absolute;
-    top: 180px; }
-    .parceiros .arrow.right {
-      background: url(../img/arrow-right.png) no-repeat;
-      right: 5px; }
-    .parceiros .arrow.left {
-      background: url(../img/arrow-left.png) no-repeat;
-      left: 5px; }
+.parceiros .partner {
+  display: inline-block;
+  text-indent: -9999px;
+  background: url(http://placehold.it/243x243/);
+  width: 243px;
+  height: 243px;
+  margin: 43px 3px 0 3px; }
+.parceiros .arrow {
+  width: 24px;
+  height: 46px;
+  position: absolute;
+  top: 355px; }
+  .parceiros .arrow.right {
+    background: url(../img/arrow-right.png) no-repeat;
+    right: -45px; }
+  .parceiros .arrow.left {
+    background: url(../img/arrow-left.png) no-repeat;
+    left: -45px; }
 
 .contato {
-  background-color: #e1a013; }
+  background-color: #e1a013;
+  position: relative; }
+  .contato .contato-top {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -205px;
+    margin-left: -600px; }
   .contato .container {
     width: 1005px;
     padding: 50px 0 80px 0; }

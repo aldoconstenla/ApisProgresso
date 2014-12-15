@@ -1,6 +1,15 @@
 .contato {
 
 	background-color: $main-color;
+	position: relative;
+
+	.contato-top {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -205px;
+		margin-left: -600px;
+	}
 
 	.container {
 		width: 1005px;

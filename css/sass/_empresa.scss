@@ -1,8 +1,9 @@
 .empresa {
 
 	.container {
-		margin: 170px auto;
-		width: 855px;
+		margin: 0 auto 170px auto;
+		padding-top: 170px;
+		width: 960px;
 	}
 
 	.empresa_img {
@@ -14,12 +15,13 @@
 	}
 
 	%text-margin {
-		margin-left: 270px;
+		margin-left: 305px;
 	}
 
 	p {
 		@extend %text-margin;
-		@include define-fonte('open_sansregular', 18px, #000);
+		@include define-fonte('open_sansregular', 20px, #000);
+		line-height: 3;
 	}
 
 	h2 {

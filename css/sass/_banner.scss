@@ -8,7 +8,7 @@
 	position: relative;
 
 	.container {
-		padding-top: 245px;
+		padding-top: 205px;
 	}
 
 	%text {
@@ -34,10 +34,18 @@
 		height: 80px;
 		width: 80px;
 		position: absolute;
-		top: 50%;
+		// top: 50%;
 		left: 50%;
-		margin: 305px 0 0 -40px;
-
+		bottom: 0;
+		margin: 0 0 90px -40px;
+		-webkit-animation:bounce 1s infinite;
 	}
 
+}
+
+@-webkit-keyframes bounce {
+  0%       { bottom:5px; }
+  25%, 75% { bottom:15px; }
+  50%      { bottom:20px; }
+  100%     { bottom:0; }
 }

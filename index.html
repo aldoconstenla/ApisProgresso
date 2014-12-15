@@ -12,7 +12,7 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
+<!--         <link rel="stylesheet" href="css/normalize.css"> -->
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -21,75 +21,91 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        
-        <header class="container">
+        <header class="container" id="inicio">
             <a href="#" class="logo clearfix">
                 <div class="logo_img"></div>
                 <p>APIS PROGRESSO</p>
             </a>
             <div class="menu">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Empresa</a></li>
-                    <li><a href="#">Produtos</a></li>
-                    <li><a href="#">Parceiros</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="#inicio">Home</a></li>
+                    <li><a href="#empresa">Empresa</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#parceiros">Parceiros</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </div><!-- menu -->
         </header>
+
+        <div class="minimenu">
+            <div class="container">
+                <a href="#" class="logo clearfix">
+                    <div class="logo_img"></div>
+                    <p>APIS PROGRESSO</p>
+                </a>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#inicio">Home</a></li>
+                        <li><a href="#empresa">Empresa</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#parceiros">Parceiros</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div><!-- menu -->
+            </div>  
+        </div>
         
-        <section class="banner">
+        <section class="banner" id="home">
             <div class="container">
                 <h1>LOREM IPSUM DOLOR SIT AMET</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <p>Nam sodales diam quis auctor consequat.</p>
-                <a href="#" class="arrow-down"></a>
+                <a href="#empresa" class="arrow-down"></a>
             </div><!-- container -->
         </section>
 
-        <section class="empresa">    
+        <section class="empresa" id="empresa">    
             <div class="container clearfix">
                 <div class="empresa_img"></div>
                 <h2>SOBRE NOSSA EMPRESA</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet congue velit, nec hendrerit lectus luctus id. Nam finibus lorem fermentum consequat tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum sit amet erat elit. 
-                </p>
-                <p>
-                    Ut eget orci facilisis justo vehicula elementum in tempus dolor. Phasellus sed elit dictum, cursus purus quis, convallis nisi. Morbi volutpat odio et sapien convallis, at dictum nibh malesuada. Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet congue velit, nec hendrerit lectus luctus id. Nam finibus lorem fermentum consequat tristique. Pellentesque habitant morbi tristique senectus et netus.
                 </p>
             </div><!-- container -->
         </section>
 
-        <section class="produtos">
-            <div class="container">
-                <div class="bg-top"></div>
-                <div class="bg-bottom"></div>
+        <section class="produtos" id="produtos">
 
-                <!-- Imagens a serem alteradas para ícones em vetor (fontes) -->
+            <img src="img/prod_top.png" class="prod-top">
+            <img src="img/prod_bottom.png" class="prod-bottom">
+
+            <div class="container">
+                
+                <!-- Imagens a serem alteradas para ícones em vetor (fonts) -->
 
                 <h2>PRODUTOS</h2>
 
-                <a href="#" class="product">
+                <a href="#" class="product mel">
                     <img src="img/mel_bg.png" alt="">
                     <p>Compostos de Mel</p>
                 </a>
-                <a href="#" class="product">
+                <a href="#" class="product propolis">
                     <img src="img/propolis_bg.png" alt="">
                     <p>Própolis</p>
                 </a>
-                <a href="#" class="product">
+                <a href="#" class="product granola">
                     <img src="img/granola_bg.png" alt="">
                     <p>Granola</p>
                 </a>
-                <a href="#" class="product">
+                <a href="#" class="product xarope">
                     <img src="img/xarope_bg.png" alt="">
                     <p>Xaropes</p>
                 </a>
-                <a href="#" class="product">
+                <a href="#" class="product geleia">
                     <img src="img/geleia_bg.png" alt="">
                     <p>Geleia Real</p>
                 </a>
-                <a href="#" class="product">
+                <a href="#" class="product outros">
                     <img src="img/outros_bg.png" alt="">
                     <p>Outros</p>
                 </a>
@@ -97,7 +113,7 @@
 
         </section>
 
-        <section class="parceiros">
+        <section class="parceiros" id="parceiros">
             <div class="container">
                 <h2>NOSSOS PARCEIROS</h2>
 
@@ -106,13 +122,13 @@
                 <div class="partner">Kuri Manju</div>
                 <div class="partner">Casa Natural</div>
                 <!-- <div class="partner">Apis Jordans</div> -->
+                <a href="#"><div class="arrow right"></div></a>
+                <a href="#"><div class="arrow left"></div></a>
             </div><!-- container -->
-
-            <a href="#"><div class="arrow right"></div></a>
-            <a href="#"><div class="arrow left"></div></a>
         </section>
 
-        <section class="contato">
+        <section class="contato" id="contato">
+            <img src="img/contato_top.png" alt="" class="contato-top">
             <div class="container clearfix">
                 <div class="mail-us">
                     <h2>Mande-nos um e-mail</h2>
@@ -137,17 +153,18 @@
 
 
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/animation.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
+            e.src='http://www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>

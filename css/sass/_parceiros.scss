@@ -1,10 +1,12 @@
 .parceiros {
 
-	position: relative;
+	// position: relative;
 	
 	.container {
-		margin: 170px auto;
+		margin: 0 auto 170px auto;
+		padding-top: 170px;
 		width: 1010px;
+		position: relative;
 	}
 
 	.partner {
@@ -21,15 +23,15 @@
 		width: 24px;
 		height: 46px;
 		position: absolute;
-		top: 180px;
+		top: 355px;
 
 		&.right {
 			background: url(../img/arrow-right.png) no-repeat;
-			right: 5px;
+			right: -45px;
 		}
 		&.left {
 			background: url(../img/arrow-left.png) no-repeat;
-			left: 5px;
+			left: -45px;
 		}
 	}
 

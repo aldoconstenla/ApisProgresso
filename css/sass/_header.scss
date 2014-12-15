@@ -1,4 +1,4 @@
-header {
+header, .minimenu>.container {
 
 	position: relative;
 
@@ -16,6 +16,7 @@ header {
 	}
 
 	.menu {
+		z-index: 100;
 		position: absolute;
 		right: 0;
 		top: 70px;
@@ -25,10 +26,44 @@ header {
 		}
 		a {
 			@include define-fonte('open_sanssemibold', 20px, #000);
+			@include transition(0.2s, ease, all);
+			padding-bottom: 8px;
 			&:hover {
-				color: darken($main_color, 20%);
+				color: darken($main_color, 10%);
+				border-bottom: 2px solid darken($main_color, 10%);
 			}
 		}
 	}
 
+}
+
+.minimenu {
+	opacity: 0;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	background-color: #FFF;
+	border-bottom: 1px solid $main_color;
+	z-index: 1;
+
+	.container {
+		.logo_img {
+			background: url(../img/logomini-img.png) no-repeat;
+			height: 106px;
+			width: 106px;
+		}
+		.menu {
+			top: 40px;
+		}
+		p {
+			margin-top: 28px;
+			padding-bottom: 25px;
+		}
+	}
+}
+
+.minimenu.active {
+	opacity: 1;
+	z-index: 9999;
+	transition: opacity 0.5s;
 }

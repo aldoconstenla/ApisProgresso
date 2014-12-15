@@ -1,8 +1,26 @@
 .produtos {
 
+	position: relative;
+
+	.prod-top, .prod-bottom {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -600px;
+	}
+
+	.prod-top {
+		margin-top: -447px;
+	}
+
+	.prod-bottom {
+		margin-top: 430px;
+	}
+
 	.container {
-		padding: 80px 0;
+		padding: 130px 0 100px 0;
 		width: 1054px;
+		height: 660px;
 	}
 
 	background-color: $main-color;
@@ -11,26 +29,54 @@
 		color: #FFF;
 	}
 
+	$products: mel propolis granola xarope geleia outros; //define produtos
+	$prod-left: 105px;
+	$prod-width: 265px;
+	$i: 1;
+
 	.product {
 		width: 255px;
 		height: 255px;
-		background-color: darken($main-color, 7%);
-		display: inline-block;
-		position: relative;
+		display: block;
+		position: absolute;
+		top: 225px;
+		@each $product in $products {
+			&.#{$product} {
+				left: $prod-left;
+				$prod-left: $prod-left + $prod-width;
+				@if $prod-left > $prod-width*4 { //quebra depois de 4 produtos
+					$prod-left: 105px;
+				}
+				@if $i > 4 {
+					top: 490px;
+				}
+				$i: $i+1;
+			}
+		}
 	}
 
 	a {
-		@include define-fonte('open_sansregular', 14px);
+		background-color: darken($main-color, 7%);
+		@include define-fonte('open_sansregular', 16px);
 		text-align: center;
 		margin: 5px 5px 5px 0px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		@include transition(0.3s, ease, all);
+		
+		&:hover {
+			background-color: #FFF;
+			color: #000;
+		}
+
 	}
 
 	h2 {
 		margin: 0 0 35px 20px;
 	}
 
-	//Ícones propositalmente mal alinhados pois possuem tamanhos diferentes. Correção será realizada ao alterar ícones para vetor.
-	img {
+
+	.product>img {
 		position: absolute;
 		left: 40px;
 		top: 16px;
