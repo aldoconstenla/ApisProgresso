@@ -31,7 +31,7 @@
 
 	$products: mel propolis granola xarope geleia outros; //define produtos
 	$prod-left: 105px;
-	$prod-width: 265px;
+	$prod-width: 265px; //largura do elemento produto + 10px de margin
 	$i: 1;
 
 	.product {
@@ -52,6 +52,11 @@
 				}
 				$i: $i+1;
 			}
+		}
+		&.resized {
+			-ms-transform: scale(0.5,0.5); /* IE 9 */
+    		-webkit-transform: scale(0.5,0.5); /* Chrome, Safari, Opera */
+    		transform: scale(0.5,0.5);
 		}
 	}
 

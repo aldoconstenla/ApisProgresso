@@ -765,7 +765,8 @@ header, .minimenu > .container {
     top: 40px; }
   .minimenu .container p {
     margin-top: 28px;
-    padding-bottom: 25px; }
+    padding-bottom: 25px;
+    width: 320px; }
 
 .minimenu.active {
   opacity: 1;
@@ -873,6 +874,12 @@ header, .minimenu > .container {
     .produtos .product.outros {
       left: 370px;
       top: 490px; }
+    .produtos .product.resized {
+      -ms-transform: scale(0.5, 0.5);
+      /* IE 9 */
+      -webkit-transform: scale(0.5, 0.5);
+      /* Chrome, Safari, Opera */
+      transform: scale(0.5, 0.5); }
   .produtos a {
     background-color: #c08910;
     font-family: "open_sansregular", "sans-serif";

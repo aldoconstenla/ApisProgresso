@@ -20,4 +20,9 @@ $( document ).ready(function() {
 	    }
 	});
 
+	$('.product').on('click', function(e) {
+		e.preventDefault();
+		$(this).addClass('resized');
+	});
+
 });
