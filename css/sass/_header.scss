@@ -61,10 +61,10 @@ header, .minimenu>.container {
 			width: 320px;
 		}
 	}
-}
 
-.minimenu.active {
-	opacity: 1;
-	z-index: 9999;
-	transition: opacity 0.5s;
+	&.active {
+		opacity: 1;
+		z-index: 9999;
+		transition: opacity 0.5s;
+	}
 }

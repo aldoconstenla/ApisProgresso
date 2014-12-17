@@ -60,6 +60,27 @@
 		}
 	}
 
+	.prod-display {
+		opacity: 0;
+		z-index: 0;
+		visibility: hidden;
+		// display: none;
+		position: absolute;
+		right: 110px;
+		top: 215px;
+		width: 770px;
+		height: 570px;
+		background-color: #FFF;
+		border-radius: 15px;
+		&.active {
+			// display: block;
+			opacity: 1;
+			z-index: 9999;
+			transition: opacity 0.5s;
+			visibility: inherit;
+		}
+	}
+
 	a {
 		background-color: darken($main-color, 7%);
 		@include define-fonte('open_sansregular', 16px);
@@ -69,7 +90,7 @@
 		letter-spacing: 2px;
 		@include transition(0.3s, ease, all);
 		
-		&:hover {
+		&:hover, &.active {
 			background-color: #FFF;
 			color: #000;
 		}
