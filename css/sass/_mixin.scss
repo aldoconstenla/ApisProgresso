@@ -4,8 +4,8 @@
 	color: $cor;
 }
 
-@mixin transition($time, $type, $property) {
-	transition: $time $type $property;
-	-webkit-transition: $time $type $property;
-	-moz-transition: $time $type $property;
+@mixin transition($type, $time, $property) {
+	transition: $type $time $property;
+	-webkit-transition: $type $time $property;
+	-moz-transition: $type $time $property;
 }

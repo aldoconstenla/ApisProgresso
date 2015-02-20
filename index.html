@@ -14,6 +14,7 @@
 
 <!--         <link rel="stylesheet" href="css/normalize.css"> -->
         <link rel="stylesheet" href="css/main.css">
+        <link href="css/perfect-scrollbar.css" rel="stylesheet">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -85,47 +86,68 @@
 
                 <h2>PRODUTOS</h2>
 
-                <a href="#" class="product mel" data-left="45px" data-top="150px">
+                <a href="#" class="product mel" data-left="-575px" data-top="150px" data-name="mel">
                     <img src="img/mel_bg.png" alt="">
                     <p>Compostos de Mel</p>
                 </a>
-                <a href="#" class="product propolis" data-left="180px" data-top="150px">
+                <a href="#" class="product propolis" data-left="-438px" data-top="150px" data-name="propolis">
                     <img src="img/propolis_bg.png" alt="">
                     <p>Própolis</p>
                 </a>
-                <a href="#" class="product granola" data-left="45px" data-top="285px">
+                <a href="#" class="product granola" data-left="-575px" data-top="285px" data-name="granola">
                     <img src="img/granola_bg.png" alt="">
                     <p>Granola</p>
                 </a>
-                <a href="#" class="product xarope" data-left="180px" data-top="285px">
+                <a href="#" class="product xarope" data-left="-438px" data-top="285px" data-name="xarope">
                     <img src="img/xarope_bg.png" alt="">
                     <p>Xaropes</p>
                 </a>
-                <a href="#" class="product geleia" data-left="45px" data-top="420px">
+                <a href="#" class="product geleia" data-left="-575px" data-top="420px" data-name="geleia">
                     <img src="img/geleia_bg.png" alt="">
                     <p>Geleia Real</p>
                 </a>
-                <a href="#" class="product outros" data-left="180px" data-top="420px">
+                <a href="#" class="product outros" data-left="-438px" data-top="420px" data-name="outros">
                     <img src="img/outros_bg.png" alt="">
                     <p>Outros</p>
                 </a>
 
-                <div class="prod-display">
+                <div class="prod-display" id="Scrollbar">
+                    <!-- 
+                        AJAX
+                        lista-produtos.html 
+                    -->
                 </div>
 
             </div><!-- container -->
 
         </section>
 
+        <div class="prodLightbox">
+            <!-- 
+                AJAX
+                prodcategoria-mel.html
+                prodcategoria-propolis.html
+                prodcategoria-granola.html
+                prodcategoria-xarope.html
+                prodcategoria-geleia.html
+                prodcategoria-outros.html
+            -->
+        </div>
+        <div class="arrows">
+            <a href="#arrowright" class="arrow right" data-side="right"></a>
+            <a href="#arrowleft" class="arrow left" data-side="left"></a>
+        </div>
+
+        <div class="overlay"></div>
+
         <section class="parceiros" id="parceiros">
             <div class="container">
                 <h2>NOSSOS PARCEIROS</h2>
-
                 <div class="partner">Essenza</div>
                 <div class="partner">Tipikus</div>
                 <div class="partner">Kuri Manju</div>
                 <div class="partner">Casa Natural</div>
-                <!-- <div class="partner">Apis Jordans</div> -->
+                <div class="partner">Apis Jordans</div>
                 <a href="#"><div class="arrow right"></div></a>
                 <a href="#"><div class="arrow left"></div></a>
             </div><!-- container -->
@@ -152,7 +174,11 @@
             </div><!-- container -->
         </section>
 
-
+        <section class="footer">
+            <div class="container">
+                <p>Copyright © 2015 Todos os direitos reservados à Apis Progresso</p>
+            </div>
+        </section>
 
 
 
@@ -162,6 +188,7 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/animation.js"></script>
+        <script src="js/perfect-scrollbar.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

@@ -30,9 +30,12 @@
 	}
 
 	$products: mel propolis granola xarope geleia outros; //define produtos
-	$prod-left: 105px;
-	$prod-width: 265px; //largura do elemento produto + 10px de margin
-	$i: 1;
+	$prod-margin: 5px; //margin de cada elemento (left, right, top e bottom)
+	$prod-size: 255px; //largura do elemento
+	$prod-top: 235px; //top inicial
+	$prod-position: (($prod-size * 2) + ($prod-margin * 3)) * (-1); //posição do primeiro elemento - duas vezes a largura do elemento + 3 margens
+	$i: 1; //Variável que identifica se elemento deve ser posicionado à esquerda ou à direita do centro da página. (1,2 = esquerda; 3, 4 = direita)
+	$j: 1; //Variável que identifica a linha que o elemento deve ser posicionado.
 
 	.product {
 		width: 255px;
@@ -40,48 +43,44 @@
 		display: block;
 		position: absolute;
 		top: 225px;
+		left: 50%;
 		@each $product in $products {
 			&.#{$product} {
-				left: $prod-left;
-				$prod-left: $prod-left + $prod-width;
-				@if $prod-left > $prod-width*4 { //quebra depois de 4 produtos
-					$prod-left: 105px;
-				}
-				@if $i > 4 {
-					top: 490px;
-				}
-				$i: $i+1;
-			}
+				@if $i > 2 { //Verifica se itens da esquerda já foram posicionados
+		 			margin-left: $prod-position;
+		 			$prod-position: $prod-size + ($prod-margin * 3); //Define posição do próximo elemento
+		 			$i : $i+1;
+		 			@if $i > 4 { //Verifica se itens da direita já foram posicionados
+		 				$i: 1; //Volta contador para posição de posicionar elementos da esquerda
+		 				$j: $j+1; //Informa que elementos seguintes fazem parte de nova linha
+		 				$prod-position: (($prod-size * 2) + ($prod-margin * 3)) * (-1); //Define posição do próximo elemento (posição inicial)
+		 			}
+		 		} @else { //Caso itens da esquerda não tenham sido posicionados
+					margin-left: $prod-position; 
+					@if $j > 1 { //Verifica se a primeira linha já foi posicionada
+						top: $prod-top + $prod-size;
+					}
+			 		$prod-position: ($prod-size + $prod-margin) * (-1); //Define posição do próximo elemento
+			 		$i : $i+1; 
+			 		@if $i > 2 { //Caso elementos da esquerda já tenham sido posicionados
+						$prod-position: $prod-margin; //Atribui posição de primeiro elemento da direita
+			 		}
+		 		}
+		 	}
 		}
+
 		&.resized {
 			-ms-transform: scale(0.5,0.5); /* IE 9 */
     		-webkit-transform: scale(0.5,0.5); /* Chrome, Safari, Opera */
     		transform: scale(0.5,0.5);
 		}
-	}
 
-	.prod-display {
-		opacity: 0;
-		z-index: 0;
-		visibility: hidden;
-		// display: none;
-		position: absolute;
-		right: 110px;
-		top: 215px;
-		width: 770px;
-		height: 570px;
-		background-color: #FFF;
-		border-radius: 15px;
-		&.active {
-			// display: block;
-			opacity: 1;
-			z-index: 9999;
-			transition: opacity 0.5s;
-			visibility: inherit;
+		p {
+			margin-top: 210px;
 		}
 	}
 
-	a {
+	.container>a {
 		background-color: darken($main-color, 7%);
 		@include define-fonte('open_sansregular', 16px);
 		text-align: center;
@@ -97,6 +96,88 @@
 
 	}
 
+	.prod-display {
+		opacity: 0;
+		z-index: 0;
+		visibility: hidden;
+		overflow: hidden;
+		position: absolute;
+		top: 215px;
+		left: 50%;
+		margin-left: -210px;
+		width: 770px;
+		height: 640px;
+		background-color: #FFF;
+		border-radius: 15px;
+		&.active {
+			opacity: 1;
+			z-index: 999;
+			transition: opacity 0.5s;
+			visibility: inherit;
+		}
+		.category {
+			// width: 750px;
+			display: none;
+			&.active {
+				display:block;
+			}
+		}
+		ul {
+			position: relative;
+			left: 35px; 
+			top: 35px;
+		}
+		li {
+			display: inline-block;
+			width: 200px;
+			height: 255px;
+			margin: 0 15px 30px 15px;
+			border: 1px solid darken($main_color, 10%);
+			border-radius: 10px;
+			@include transition(All, 0.3s, ease-in-out);
+			&:hover {
+				transform: scale(1.03,1.03);
+				-ms-transform: scale(1.03,1.03); /* IE 9 */
+				-webkit-transform: scale(1.03,1.03); /* Chrome, Safari, Opera */
+				box-shadow: 0px 1px 5px #888888;
+				-ms-box-shadow: 0px 1px 5px #888888;
+				-webkit-box-shadow: 0px 1px 5px #888888;
+			}
+			a {
+				position: relative;
+				display: block;
+				/* left: 5px; */
+				/* top: 5px; */
+				height: 255px;
+				&:hover:before {
+					opacity: 0.2;
+				}
+				&:before { 
+					content: " ";
+					background-color: $main_color;
+					display: block;
+					width: 200px;
+					height: 255px;
+					position: absolute;
+					z-index: 9;
+					border-radius: 10px;
+					opacity: 0;
+					@include transition(All, 0.3s, ease-in-out);
+				}
+			}
+			p {
+				@include define-fonte('open_sansregular', 13px, #000);
+				margin: 8px 10px 0px 0px;
+				text-align: center;
+				margin: 10px 0 0 5px;
+			}
+			img {
+				border-radius: 10px 10px 0 0;
+				margin: 5px 0px 0px 5px;
+			}
+		}
+	}
+
 	h2 {
 		margin: 0 0 35px 20px;
 	}
@@ -108,9 +189,101 @@
 		top: 16px;
 	}
 
-	p {
-		margin-top: 210px;
+
+}
+
+%invisivel { opacity: 0; visibility:hidden;	@include transition(All, 0.3s, ease-in-out); }
+@mixin visivel($opacity) { opacity: $opacity; visibility: inherit; }
+
+.prodLightbox {
+	z-index: 99999;
+	display: block;
+	position: fixed;
+	width: 890px;
+	height: 600px;
+	background-color: #FFF;
+	left: 50%;
+	top: 50%;
+	margin: -300px 0 0 -445px;
+	border-radius:5px;
+	@extend %invisivel;
+	.container {
+		width: auto;
+		display: block;
+		@extend %invisivel;
+		&.active {
+			// display: block;
+			@include visivel(1);
+		}
 	}
+	&.active {
+		// display: block;
+		@include visivel(1);
+	}
+	img	{
+		margin: 25px 0 0 25px;
+		position: absolute;
+	}
+	.description {
+		position: absolute;
+		text-align: justify;
+		right: 0;
+		top: 0;
+		width: 260px;
+		margin-right: 28px;
+		margin-top: 20px;
+		p {
+			@include define-fonte('open_sansregular', 16px, #000);
+		}
+		h3 {
+			@include define-fonte('open_sansbold', 18px, #000);
+		}
+	}
+}
 
+.arrows {
+	z-index: 99999;
+	display: block;
+	position: fixed;
+	width: 890px;
+	height: 600px;
+	left: 50%;
+	top: 50%;
+	margin: -300px 0 0 -445px;
+	@extend %invisivel;
+	&.active {
+		// display: block;
+		@include visivel(1);
+	}
+	.arrow {	
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin: -23px;
+		height: 45px;
+		width: 45px;
+		background-color: lighten($main_color, 15%);
+		border-radius: 55px;
+		&.left {
+			margin-left: -470px;
+		}
+		&.right {
+			margin-left: 420px;
+		}
+	}
+}
 
+.overlay {
+	display: block;
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	@extend %invisivel;
+	&.active {
+		// display: block;
+		@include visivel(0.7);
+	}
 }
