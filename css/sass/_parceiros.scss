@@ -34,7 +34,12 @@
 		position: absolute;
 		top: 355px;
 		z-index: 9;
-
+		@include transition(All, 0.2s, ease-in-out);
+		&:hover {
+			-ms-transform: scale(1.2,1.2); /* IE 9 */
+    		-webkit-transform: scale(1.2,1.2); /* Chrome, Safari, Opera */
+    		transform: scale(1.2,1.2);
+		}
 		&.right {
 			background: url(../img/arrow-right.png) no-repeat;
 			right: -45px;

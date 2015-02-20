@@ -87,7 +87,7 @@
 		margin: 5px 5px 5px 0px;
 		text-transform: uppercase;
 		letter-spacing: 2px;
-		@include transition(0.3s, ease, all);
+		@include transition(All, 0.3s, ease-in-out);
 		
 		&:hover, &.active {
 			background-color: #FFF;

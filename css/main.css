@@ -891,9 +891,9 @@ header, .minimenu > .container {
     margin: 5px 5px 5px 0px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: 0.3s ease all;
-    -webkit-transition: 0.3s ease all;
-    -moz-transition: 0.3s ease all; }
+    transition: All 0.3s ease-in-out;
+    -webkit-transition: All 0.3s ease-in-out;
+    -moz-transition: All 0.3s ease-in-out; }
     .produtos .container > a:hover, .produtos .container > a.active {
       background-color: #FFF;
       color: #000; }
@@ -1102,7 +1102,16 @@ header, .minimenu > .container {
   height: 46px;
   position: absolute;
   top: 355px;
-  z-index: 9; }
+  z-index: 9;
+  transition: All 0.2s ease-in-out;
+  -webkit-transition: All 0.2s ease-in-out;
+  -moz-transition: All 0.2s ease-in-out; }
+  .parceiros .arrow:hover {
+    -ms-transform: scale(1.2, 1.2);
+    /* IE 9 */
+    -webkit-transform: scale(1.2, 1.2);
+    /* Chrome, Safari, Opera */
+    transform: scale(1.2, 1.2); }
   .parceiros .arrow.right {
     background: url(../img/arrow-right.png) no-repeat;
     right: -45px; }
