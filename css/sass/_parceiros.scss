@@ -11,23 +11,29 @@
 
 	ul {
 		width: 9999px;
+		margin-left: 87px;
 	}
 
-	.partner {
-		display: inline-block;
-		text-indent: -9999px;
-		background: url(http://placehold.it/243x243/);
-		width: 243px;
-		height: 243px;
-		margin: 45px 3px 0 3px;
+	.partnericons {
+		width: 1180px;
+		margin-left: -85px;
+		overflow: hidden;
+		.partner {
+			display: inline-block;
+			text-indent: -9999px;
+			background: url(http://placehold.it/243x243/);
+			width: 243px;
+			height: 243px;
+			margin: 45px 3px 0 3px;
+		}
 	}
 
-	.arrow {
-		
+	.arrow {		
 		width: 24px;
 		height: 46px;
 		position: absolute;
 		top: 355px;
+		z-index: 9;
 
 		&.right {
 			background: url(../img/arrow-right.png) no-repeat;
@@ -36,6 +42,21 @@
 		&.left {
 			background: url(../img/arrow-left.png) no-repeat;
 			left: -45px;
+		}
+	}
+
+	.degrade {
+		width: 100px;
+		height: 250px;
+		position: absolute;
+		top: 254px;
+		&.right { 
+			right: -90px;
+			background: url(../img/degrade-right.png) no-repeat;
+		}
+		&.left { 
+			left: -90px; 
+			background: url(../img/degrade-left.png) no-repeat;
 		}
 	}
 

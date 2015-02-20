@@ -1084,25 +1084,42 @@ header, .minimenu > .container {
   width: 1010px;
   position: relative; }
 .parceiros ul {
-  width: 9999px; }
-.parceiros .partner {
-  display: inline-block;
-  text-indent: -9999px;
-  background: url(http://placehold.it/243x243/);
-  width: 243px;
-  height: 243px;
-  margin: 45px 3px 0 3px; }
+  width: 9999px;
+  margin-left: 87px; }
+.parceiros .partnericons {
+  width: 1180px;
+  margin-left: -85px;
+  overflow: hidden; }
+  .parceiros .partnericons .partner {
+    display: inline-block;
+    text-indent: -9999px;
+    background: url(http://placehold.it/243x243/);
+    width: 243px;
+    height: 243px;
+    margin: 45px 3px 0 3px; }
 .parceiros .arrow {
   width: 24px;
   height: 46px;
   position: absolute;
-  top: 355px; }
+  top: 355px;
+  z-index: 9; }
   .parceiros .arrow.right {
     background: url(../img/arrow-right.png) no-repeat;
     right: -45px; }
   .parceiros .arrow.left {
     background: url(../img/arrow-left.png) no-repeat;
     left: -45px; }
+.parceiros .degrade {
+  width: 100px;
+  height: 250px;
+  position: absolute;
+  top: 254px; }
+  .parceiros .degrade.right {
+    right: -90px;
+    background: url(../img/degrade-right.png) no-repeat; }
+  .parceiros .degrade.left {
+    left: -90px;
+    background: url(../img/degrade-left.png) no-repeat; }
 
 .contato {
   background-color: #e1a013;
