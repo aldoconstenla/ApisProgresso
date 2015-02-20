@@ -26,6 +26,14 @@
 			height: 243px;
 			margin: 45px 3px 0 3px;
 		}
+		li {
+			@include transition(All, 0.3s, ease-in-out);
+			&:hover {
+				-ms-transform: scale(1.02,1.02); /* IE 9 */
+    			-webkit-transform: scale(1.02,1.02); /* Chrome, Safari, Opera */
+    			transform: scale(1.02,1.02);
+			}
+		}
 	}
 
 	.arrow {		

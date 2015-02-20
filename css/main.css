@@ -1097,6 +1097,16 @@ header, .minimenu > .container {
     width: 243px;
     height: 243px;
     margin: 45px 3px 0 3px; }
+  .parceiros .partnericons li {
+    transition: All 0.3s ease-in-out;
+    -webkit-transition: All 0.3s ease-in-out;
+    -moz-transition: All 0.3s ease-in-out; }
+    .parceiros .partnericons li:hover {
+      -ms-transform: scale(1.02, 1.02);
+      /* IE 9 */
+      -webkit-transform: scale(1.02, 1.02);
+      /* Chrome, Safari, Opera */
+      transform: scale(1.02, 1.02); }
 .parceiros .arrow {
   width: 24px;
   height: 46px;
