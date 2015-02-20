@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
 
 	//Rolagem animada
 	$(function() {
@@ -145,7 +145,26 @@ $( document ).ready(function() {
 		});
 	}
 
-});
+
+	//Slider Parceiros
+
+	var margin;
+
+	function reposicionaParceiros(side) {
+		margin = parseInt($('.partnericons ul').css('margin-left'));
+		if (side == 'right' && margin > (-419)) {
+			$('.partnericons ul').animate({	marginLeft: '-=253px' }, 500);
+		} else if(side == 'left' && margin < 87) {
+			$('.partnericons ul').animate({	marginLeft: '+=253px' }, 500);
+		}
+	}
+
+	$('.parceiros .arrow').on('click', function() {
+		reposicionaParceiros($(this).data('side'));
+	});
+
+
+}); //Fim
 
 
 
