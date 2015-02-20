@@ -85,7 +85,7 @@ $( document ).ready(function() {
 		$('.prodLightbox').addClass('active');
 		$('.overlay').addClass('active');
 		$('.prodLightbox').find('.'+categoria+'.item'+numitem).addClass('active');
-		$('.arrows').addClass('active');
+		$('.features').addClass('active');
 	}
 
 	$(document).on('click', '.category a', function(event) {
@@ -100,7 +100,7 @@ $( document ).ready(function() {
 		$('.prodLightbox').removeClass('active');
 		$('.overlay').removeClass('active');
 		$('.prodLightbox').find('.container').removeClass('active');
-		$('.arrows').removeClass('active');
+		$('.features').removeClass('active');
 	});
 
 	$('.arrow').on('click', function() {
@@ -136,10 +136,11 @@ $( document ).ready(function() {
 
 	function recebeProdLightbox(category, numitem) {
 		$.ajax('prodcategoria-'+category+'.html', {
+			beforeSend: function() { $('.features .loader').addClass('active'); },
 			success: function(response){ $('.prodLightbox').html(response); },
 			complete: function() {
-				console.log('recebeProdLightbox ok');
 				ativaLightbox(category, numitem);
+				$('.features .loader').removeClass('active');
 			}
 		});
 	}

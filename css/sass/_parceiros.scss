@@ -9,13 +9,17 @@
 		position: relative;
 	}
 
+	ul {
+		width: 9999px;
+	}
+
 	.partner {
 		display: inline-block;
 		text-indent: -9999px;
 		background: url(http://placehold.it/243x243/);
 		width: 243px;
 		height: 243px;
-		margin: 43px 3px 0 3px;
+		margin: 45px 3px 0 3px;
 	}
 
 	.arrow {

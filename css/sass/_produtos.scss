@@ -126,6 +126,7 @@
 			position: relative;
 			left: 35px; 
 			top: 35px;
+			width: 705px;
 		}
 		li {
 			display: inline-block;
@@ -192,6 +193,15 @@
 
 }
 
+.loader {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -16px 0 0 -16px;
+}
+
 %invisivel { opacity: 0; visibility:hidden;	@include transition(All, 0.3s, ease-in-out); }
 @mixin visivel($opacity) { opacity: $opacity; visibility: inherit; }
 
@@ -241,7 +251,7 @@
 	}
 }
 
-.arrows {
+.features {
 	z-index: 99999;
 	display: block;
 	position: fixed;
@@ -252,7 +262,6 @@
 	margin: -300px 0 0 -445px;
 	@extend %invisivel;
 	&.active {
-		// display: block;
 		@include visivel(1);
 	}
 	.arrow {	
@@ -269,6 +278,12 @@
 		}
 		&.right {
 			margin-left: 420px;
+		}
+	}
+	.loader {
+		display: none;
+		&.active {
+			display: block;
 		}
 	}
 }

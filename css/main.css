@@ -922,7 +922,8 @@ header, .minimenu > .container {
     .produtos .prod-display ul {
       position: relative;
       left: 35px;
-      top: 35px; }
+      top: 35px;
+      width: 705px; }
     .produtos .prod-display li {
       display: inline-block;
       width: 200px;
@@ -980,7 +981,15 @@ header, .minimenu > .container {
     left: 40px;
     top: 16px; }
 
-.prodLightbox, .prodLightbox .container, .arrows, .overlay {
+.loader {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -16px 0 0 -16px; }
+
+.prodLightbox, .prodLightbox .container, .features, .overlay {
   opacity: 0;
   visibility: hidden;
   transition: All 0.3s ease-in-out;
@@ -1027,7 +1036,7 @@ header, .minimenu > .container {
       font-size: 18px;
       color: #000; }
 
-.arrows {
+.features {
   z-index: 99999;
   display: block;
   position: fixed;
@@ -1036,10 +1045,10 @@ header, .minimenu > .container {
   left: 50%;
   top: 50%;
   margin: -300px 0 0 -445px; }
-  .arrows.active {
+  .features.active {
     opacity: 1;
     visibility: inherit; }
-  .arrows .arrow {
+  .features .arrow {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -1048,10 +1057,14 @@ header, .minimenu > .container {
     width: 45px;
     background-color: #f0be50;
     border-radius: 55px; }
-    .arrows .arrow.left {
+    .features .arrow.left {
       margin-left: -470px; }
-    .arrows .arrow.right {
+    .features .arrow.right {
       margin-left: 420px; }
+  .features .loader {
+    display: none; }
+    .features .loader.active {
+      display: block; }
 
 .overlay {
   display: block;
@@ -1070,13 +1083,15 @@ header, .minimenu > .container {
   padding-top: 170px;
   width: 1010px;
   position: relative; }
+.parceiros ul {
+  width: 9999px; }
 .parceiros .partner {
   display: inline-block;
   text-indent: -9999px;
   background: url(http://placehold.it/243x243/);
   width: 243px;
   height: 243px;
-  margin: 43px 3px 0 3px; }
+  margin: 45px 3px 0 3px; }
 .parceiros .arrow {
   width: 24px;
   height: 46px;
